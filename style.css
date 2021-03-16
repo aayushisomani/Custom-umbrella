@@ -1,0 +1,218 @@
+/* Basic styling */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+
+/* Setting base color */
+.color {
+    background-color: var(--color);
+}
+
+  :root {
+    --color: #bbdefb;
+  }
+
+/* LEFT COLUMN - UMBRELLA PICTURES */
+.left-column {
+    width: 65%;
+    position: relative;
+}
+
+.left-column img {
+    width: 80%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.left-column img.active {
+    opacity: 1;
+}
+
+/* RIGHT SIDE PANEL */
+.right-column {
+    width: 35%;
+    margin: 60px;
+}
+
+.right-column h1 {
+    font-weight: 500;
+    font-size: 52px;
+    letter-spacing: -2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.right-column span {
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.right-column h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.right-column p {
+    font-size: 13px;
+    color: #333333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    top: -10px;
+}
+
+/* COLOR SELECTION */
+.umbrella-color {
+    margin-bottom: 30px;
+}
+
+.color-choose div {
+    display: inline-block;
+}
+
+.color-choose input[type="radio"] {
+    display: none;
+}
+
+.umbrella-color span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #86939E;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.color-choose input[type="radio"] + label span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.color-choose input[type="radio"] + label span {
+    border: 2px solid #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+}
+
+/* BLUE COLOR SELECTION */
+.color-choose input[type="radio"]#blue +label span {
+    background-color: #1ba3d8;
+}
+
+/* PINK COLOR SELECTION */
+.color-choose input[type="radio"]#pink +label span {
+    background-color: #dd0ab7;
+}
+
+/* YELLOW COLOR SELECTION */
+.color-choose input[type="radio"]#yellow +label span {
+    background-color: #fccb00;
+}
+
+.color-choose input[type="radio"]:checked +label span {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* UPLOAD LOGO BUTTON */
+#upload {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #1ba3d8;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: all .5s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#upload:hover {
+    background-color: #1273de;
+}
+
+/* UPLOADED ICON */
+.uploaded-icon{
+    max-width:130px;
+    position:absolute;
+    bottom:0;
+    left:20%;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+input[type=file]{
+  padding:10px;
+  background:#1ba3d8;
+}
+
+/* SVG ANIMATION */
+svg {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 150px;
+    height: 150px;
+    animation: rotate 2s linear infinite;
+    visibility: hidden;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 940px) {
+    .container {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+    .left-column,.right-column {
+        width: 100%;
+    }
+    .left-column img {
+        width: 300px;
+        right: 0;
+        top: -65px;
+        bottom: initial;
+    }
+}
+
+@media (max-width: 535px) {
+    .left-column img {
+        width: 220px;
+        top: -85px;
+    }
+}
